@@ -23,30 +23,14 @@ const Skills = () => {
         ease: 'back.out(1.7)'
       });
 
-      // Animate skill cards
-      skillCardsRef.current.forEach((card, index) => {
-        if (card) {
-          gsap.from(card, {
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 90%',
-            },
-            opacity: 0,
-            y: 50,
-            rotation: -5,
-            duration: 0.6,
-            delay: index * 0.05,
-            ease: 'power2.out'
-          });
-        }
-      });
+
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
@@ -56,11 +40,20 @@ const Skills = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 1, scale: 1 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: { duration: 0.4 }
+    }
+  };
+
+  const floatingAnimation = {
+    y: [0, -10, 0],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut"
     }
   };
 
@@ -70,7 +63,7 @@ const Skills = () => {
       className="py-16 md:py-24 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8"
       ref={sectionRef}
     >
-      <motion.h2 
+      <motion.h2
         className="text-4xl sm:text-5xl font-bold text-center text-white mb-16 uppercase tracking-wider text-primary"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -83,14 +76,14 @@ const Skills = () => {
       <div className="skill-section-container lg:max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0">
           {/* Front-End */}
-          <motion.div 
+          <motion.div
             className="skill-category"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h3 
+            <motion.h3
               className="text-2xl font-semibold text-center text-primary mb-8 tracking-wider"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -115,6 +108,7 @@ const Skills = () => {
                   ref={el => skillCardsRef.current[index] = el}
                   className="skill-card-bg bg-card-dark rounded-xl p-4 flex flex-col items-center justify-center space-y-2 transition-all duration-300 shadow-lg border border-gray-700/50 hover:border-primary/50 skill-card-glow"
                   variants={cardVariants}
+                  animate={floatingAnimation}
                   whileHover={{ scale: 1.1, rotate: 5, borderColor: '#f59e0b' }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -134,14 +128,14 @@ const Skills = () => {
           </motion.div>
 
           {/* Back-End */}
-          <motion.div 
+          <motion.div
             className="skill-category"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h3 
+            <motion.h3
               className="text-2xl font-semibold text-center text-primary mb-8 tracking-wider"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -162,6 +156,7 @@ const Skills = () => {
                   ref={el => skillCardsRef.current[8 + index] = el}
                   className="skill-card-bg bg-card-dark rounded-xl p-4 flex flex-col items-center justify-center space-y-2 transition-all duration-300 shadow-lg border border-gray-700/50 hover:border-primary/50 skill-card-glow"
                   variants={cardVariants}
+                  animate={floatingAnimation}
                   whileHover={{ scale: 1.1, rotate: -5, borderColor: '#f59e0b' }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -193,14 +188,14 @@ const Skills = () => {
           </motion.div>
 
           {/* Tools & Platforms */}
-          <motion.div 
+          <motion.div
             className="skill-category"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h3 
+            <motion.h3
               className="text-2xl font-semibold text-center text-primary mb-8 tracking-wider"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -229,6 +224,7 @@ const Skills = () => {
                   ref={el => skillCardsRef.current[12 + index] = el}
                   className="skill-card-bg bg-card-dark rounded-xl p-4 flex flex-col items-center justify-center space-y-2 transition-all duration-300 shadow-lg border border-gray-700/50 hover:border-primary/50 skill-card-glow"
                   variants={cardVariants}
+                  animate={floatingAnimation}
                   whileHover={{ scale: 1.1, rotate: 5, borderColor: '#f59e0b' }}
                   whileTap={{ scale: 0.95 }}
                 >

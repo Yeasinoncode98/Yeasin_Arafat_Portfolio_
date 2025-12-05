@@ -98,10 +98,6 @@ const Contact = () => {
                                 href="mailto:devoncode98@gmail.com"
                                 className="group p-4 bg-card-dark rounded-xl border border-gray-600/30 dark:border-gray-700/50 flex items-center space-x-4 transition-all duration-300"
                                 whileHover={{ y: -8, scale: 1.02, borderColor: '#f59e0b' }}
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
                             >
                                 <div className="p-3 bg-gray-800/50 rounded-full group-hover:bg-primary/20 transition-colors duration-300">
                                     <span className="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform duration-300">mail</span>
@@ -117,10 +113,6 @@ const Contact = () => {
                                 href="tel:+8801627800198"
                                 className="group p-4 bg-card-dark rounded-xl border border-gray-600/30 dark:border-gray-700/50 flex items-center space-x-4 transition-all duration-300"
                                 whileHover={{ y: -8, scale: 1.02, borderColor: '#f59e0b' }}
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
                             >
                                 <div className="p-3 bg-gray-800/50 rounded-full group-hover:bg-primary/20 transition-colors duration-300">
                                     <span className="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform duration-300">call</span>
@@ -135,10 +127,6 @@ const Contact = () => {
                                 ref={el => contactCardsRef.current[2] = el}
                                 className="group p-4 bg-card-dark rounded-xl border border-gray-600/30 dark:border-gray-700/50 flex items-center space-x-4 transition-all duration-300"
                                 whileHover={{ y: -8, scale: 1.02, borderColor: '#f59e0b' }}
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.3 }}
                             >
                                 <div className="p-3 bg-gray-800/50 rounded-full group-hover:bg-primary/20 transition-colors duration-300">
                                     <span className="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform duration-300">location_on</span>
